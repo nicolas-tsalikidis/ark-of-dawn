@@ -1,0 +1,172 @@
+.seats {
+  display: grid;
+  grid-template-rows: auto 1fr 300px;
+  height: 100%;
+  padding: 1rem 2rem ;
+  gap: 1rem;
+}
+
+.seats__header {
+  text-align: center;
+}
+
+.seats__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.seats__subtitle {
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+}
+
+.seats__decks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  min-height: 0;
+}
+
+.seats__deck {
+  background-color: var(--color-card);
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.seats__deck-title {
+  font-size: 3rem;
+  font-weight: 600;
+  padding-bottom: 3rem;
+}
+
+.seats__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.seats__btn {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.6rem;
+  border: none;
+  font-size: 2rem;
+  font-family: 'Jura', sans-serif;
+  font-weight: 700;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.seats__btn--available {
+  background-color: var(--color-available);
+}
+
+.seats__btn--reserved {
+  background-color: var(--color-reserved);
+  cursor: not-allowed;
+}
+
+.seats__btn--unavailable {
+  background-color: var(--color-unavailable);
+  cursor: not-allowed;
+}
+
+.seats__btn--selected {
+  background-color: var(--color-selected);
+  outline: 3px solid white;
+}
+
+.seats__info {
+  background-color: var(--color-card);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.seats__info-label {
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: underline;
+  grid-column: 1;
+}
+
+.seats__info-seat {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-available);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  grid-column: 1;
+}
+
+.seats__info-status {
+  font-size: 1.5rem;
+  grid-column: 1;
+}
+
+.seats__info-price {
+  font-size: 1.5rem;
+  grid-column: 1;
+}
+
+.seats__legend {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.seats__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.seats__legend-dot {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 0.25rem;
+}
+
+.seats__legend-dot--available {
+  background-color: var(--color-available);
+}
+
+.seats__legend-dot--reserved {
+  background-color: var(--color-reserved);
+}
+
+.seats__continue {
+  padding: 0.85rem 2rem;
+  font-size: 1.1rem;
+  font-family: 'Jura', sans-serif;
+  font-weight: 600;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  grid-column: 2;
+  grid-row: 4;
+  align-self: end;
+}

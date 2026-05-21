@@ -1,0 +1,30 @@
+.seat {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.6rem;
+  border: none;
+  font-size: 2rem;
+  font-family: 'Jura', sans-serif;
+  font-weight: 700;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.seat--available {
+  background-color: var(--color-available);
+}
+
+.seat--reserved {
+  background-color: var(--color-reserved);
+  cursor: not-allowed;
+}
+
+.seat--unavailable {
+  background-color: var(--color-unavailable);
+  cursor: not-allowed;
+}
+
+.seat--selected {
+  background-color: var(--color-selected);
+  outline: 3px solid white;
+}
