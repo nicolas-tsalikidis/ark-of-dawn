@@ -32,3 +32,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.payment__steps {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment__step {
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+}

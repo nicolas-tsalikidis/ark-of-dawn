@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useReservation } from '../context/ReservationContext'
 import styles from './ConfirmationPage.module.css'
+import { motion } from 'motion/react'
 
 const ConfirmationPage = () => {
   const navigate = useNavigate()
@@ -41,12 +42,13 @@ const ConfirmationPage = () => {
           </p>
         </div>
 
-        <button
+        <motion.button
           className={styles.confirmation__btn}
           onClick={() => navigate('/payment')}
+          whileTap={{ scale: 0.95 }}
         >
           Confirm reservation
-        </button>
+        </motion.button>
       </div>
     </main>
   )

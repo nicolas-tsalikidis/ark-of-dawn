@@ -14,5 +14,6 @@ export type Flight = {
   date: string
   time: string
   totalSeats: number
+  image: string
   seats: Seat[]
 }

@@ -35,9 +35,9 @@ const SeatSelectionPage = () => {
   const flight = flightsData.flights.find(f => f.id === Number(flightId))
   if (!flight) return <p>Flight not found</p>
 
-  const deckA = flight.seats.filter(s => s.deck === 'A')
-  const deckB = flight.seats.filter(s => s.deck === 'B')
-
+  const deckA = (flight.seats as Seat[]).filter(s => s.deck === 'A')
+  const deckB = (flight.seats as Seat[]).filter(s => s.deck === 'B')
+  
   const handleSelectSeat = (seat: Seat) => {
     dispatch({ type: 'SELECT_SEAT', payload: seat })
   }

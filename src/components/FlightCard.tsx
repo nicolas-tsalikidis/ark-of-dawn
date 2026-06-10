@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import type { Flight } from '../types'
 import { useReservation } from '../context/ReservationContext'
 import styles from './FlightCard.module.css'
+import { motion } from 'motion/react'
 
 type FlightCardProps = {
   flight: Flight
@@ -27,6 +28,7 @@ const FlightCard = ({ flight }: FlightCardProps) => {
 
   return (
     <li className={styles.flightcard}>
+      <img src={flight.image} alt="" className={styles.flightcard__planet} />
       <h2 className={styles.flightcard__title}>
         {flight.title} - Earth → {flight.destination}
       </h2>
@@ -36,9 +38,13 @@ const FlightCard = ({ flight }: FlightCardProps) => {
       <p className={`${styles.flightcard__seats} ${getSeatClass()}`}>
         {availableSeats} / {flight.totalSeats} seats available
       </p>
-      <button className={styles.flightcard__btn} onClick={handleChooseSeats}>
+      <motion.button
+        className={styles.flightcard__btn}
+        onClick={handleChooseSeats}
+        whileTap={{ scale: 0.95 }}
+      >
         Choose seats
-      </button>
+      </motion.button>
     </li>
   )
 }

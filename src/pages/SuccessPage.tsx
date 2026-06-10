@@ -1,15 +1,25 @@
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'motion/react'
+import { QRCodeSVG } from 'qrcode.react'
 import { useReservation } from '../context/ReservationContext'
 import styles from './SuccessPage.module.css'
-import qr from '../assets/QR.png'
 
 const SuccessPage = () => {
   const navigate = useNavigate()
-  const { resetReservation } = useReservation()
+  const { resetReservation, selectedFlight, selectedSeat } = useReservation()
+
+  const qrData = JSON.stringify({
+    flight: selectedFlight?.title,
+    destination: selectedFlight?.destination,
+    date: selectedFlight?.date,
+    time: selectedFlight?.time,
+    seat: selectedSeat?.id,
+    price: selectedSeat?.price,
+  })
 
   const handleNewReservation = () => {
     resetReservation()
-    navigate('/flights')
+    navigate('/')
   }
 
   return (
@@ -18,10 +28,19 @@ const SuccessPage = () => {
       <p className={styles.success__subtitle}>
         Your seat aboard the Ark of Dawn has been successfully reserved.
       </p>
-      <img src={qr} alt="QR code" className={styles.success__qr} />
-      <button className={styles.success__btn} onClick={handleNewReservation}>
+      <QRCodeSVG
+        value={qrData}
+        size={280}
+        bgColor="transparent"
+        fgColor="#ffffff"
+      />
+      <motion.button
+        className={styles.success__btn}
+        onClick={handleNewReservation}
+        whileTap={{ scale: 0.95 }}
+      >
         New reservation
-      </button>
+      </motion.button>
     </main>
   )
 }

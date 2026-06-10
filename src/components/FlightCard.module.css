@@ -43,3 +43,19 @@
   border-radius: 0.75rem;
   cursor: pointer;
 }
+
+.flightcard {
+  position: relative;
+  overflow: visible;
+}
+
+.flightcard__planet {
+  position: absolute;
+  width: 45%;
+  top: 50%;
+  left: -20%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: -1;
+}

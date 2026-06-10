@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'motion/react'
 import styles from './WelcomePage.module.css'
 
 const WelcomePage = () => {
@@ -11,12 +12,13 @@ const WelcomePage = () => {
       <p className={styles.welcome__description}>
         Secure your place aboard the Ark of Dawn in a few simple steps.
       </p>
-      <button
+      <motion.button
         className={styles.welcome__btn}
         onClick={() => navigate('/flights')}
+        whileTap={{ scale: 0.95 }}
       >
         Start reservation
-      </button>
+      </motion.button>
     </main>
   )
 }

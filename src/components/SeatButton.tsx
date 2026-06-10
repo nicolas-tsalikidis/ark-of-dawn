@@ -1,3 +1,4 @@
+import { motion } from 'motion/react'
 import type { Seat } from '../types'
 import styles from './SeatButton.module.css'
 
@@ -16,13 +17,16 @@ const SeatButton = ({ seat, isSelected, onSelect }: SeatButtonProps) => {
   }
 
   return (
-    <button
+    <motion.button
       className={getClass()}
       onClick={() => onSelect(seat)}
       disabled={seat.status !== 'available'}
+      whileTap={seat.status === 'available' ? { scale: 0.88 } : {}}
+      animate={isSelected ? { scale: [1, 1.12, 1] } : { scale: 1 }}
+      transition={{ duration: 0.25 }}
     >
       {seat.id}
-    </button>
+    </motion.button>
   )
 }
 

@@ -5,7 +5,7 @@ type ReservationContextType = {
   selectedFlight: Flight | null
   selectedSeat: Seat | null
   setSelectedFlight: (flight: Flight) => void
-  setSelectedSeat: (seat: Seat) => void
+  setSelectedSeat: (seat: Seat | null) => void
   resetReservation: () => void
 }
 
